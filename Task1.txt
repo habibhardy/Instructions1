@@ -1,0 +1,63 @@
+
+
+/// L 'algorithme qui qui lit une phrase caractère par caractère pour déterminer le nombre de mots dans la phrase
+
+
+Algorithme CompterMotsDansPhrase
+    Début
+        
+        Afficher "Entrez une phrase se terminant par un point : "
+        Lire phrase
+
+        position <- 0  // Initialiser la position actuelle à 0
+        nombreMots <- 0  // Initialiser le compteur de mots à 0
+
+        Tant que position < Longueur(phrase) ET phrase[position] != '.'
+            
+            Tant que position < Longueur(phrase) ET phrase[position] == ' '
+                position <- position + 1
+            Fin Tant que
+
+           
+            Si position < Longueur(phrase) ET phrase[position] != ' '
+                nombreMots <- nombreMots + 1
+
+              
+                Tant que position < Longueur(phrase) ET phrase[position] != ' ' ET phrase[position] != '.'
+                    position <- position + 1
+                Fin Tant que
+            Fin Si
+
+          
+            position <- position + 1
+        Fin Tant que
+
+        Afficher "Le nombre de mots dans la phrase est : ", nombreMots
+    Fin
+
+
+/// L 'algorithme qui lit une phrase caractère par caractère pour déterminer le nombre de voyelles dans la phrase 
+
+
+    Algorithme CompterVoyellesDansPhrase
+    Début
+        Afficher "Entrez une phrase se terminant par un point : "
+        Lire phrase
+
+        position <- 0  // Initialiser la position actuelle à 0
+        nombreVoyelles <- 0  // Initialiser le compteur de voyelles à 0
+
+        voyelles <- "AEIOUYaeiouy"
+
+        Tant que position < Longueur(phrase) ET phrase[position] != '.'
+            caractere <- phrase[position]
+
+            Si Contient(voyelles, caractere)
+                nombreVoyelles <- nombreVoyelles + 1
+            Fin Si
+
+            position <- position + 1
+        Fin Tant que
+
+        Afficher "Le nombre de voyelles dans la phrase est : ", nombreVoyelles
+    Fin

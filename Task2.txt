@@ -1,0 +1,40 @@
+Algorithme SommeElementsDistinctsEnsembles
+    Début
+        Ensemble1 <- [3, 1, 7, 9]
+        Ensemble2 <- [2, 4, 1, 9, 3]
+
+        // Initialiser la somme à 0
+        somme <- 0
+
+        Pour chaque element1 Dans Ensemble1
+            trouvé <- Faux
+
+            Pour chaque element2 Dans Ensemble2
+                Si element1 == element2 Alors
+                    trouvé <- Vrai
+                    Quitter la boucle
+                Fin Si
+            Fin Pour chaque
+
+            Si trouvé == Faux Alors
+                somme <- somme + element1
+            Fin Si
+        Fin Pour chaque
+
+        Pour chaque element2 Dans Ensemble2
+            trouvé <- Faux
+
+            Pour chaque element1 Dans Ensemble1
+                Si element2 == element1 Alors
+                    trouvé <- Vrai
+                    Quitter la boucle
+                Fin Si
+            Fin Pour chaque
+
+            Si trouvé == Faux Alors
+                somme <- somme + element2
+            Fin Si
+        Fin Pour chaque
+
+        Afficher "La somme des éléments distincts est : ", somme
+    Fin
